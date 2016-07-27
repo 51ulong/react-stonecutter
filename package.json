@@ -11,7 +11,7 @@
   "scripts": {
     "test": "mocha -R spec --compilers jsx:babel-register test/*.jsx",
     "start": "gulp",
-    "install": "gulp build"
+    "postinstall": "gulp build"
   },
   "author": "Dan Train",
   "license": "MIT",
