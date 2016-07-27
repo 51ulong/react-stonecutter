@@ -10,7 +10,8 @@
   "main": "lib/react-stonecutter.js",
   "scripts": {
     "test": "mocha -R spec --compilers jsx:babel-register test/*.jsx",
-    "start": "gulp"
+    "start": "gulp",
+    "install": "gulp build"
   },
   "author": "Dan Train",
   "license": "MIT",

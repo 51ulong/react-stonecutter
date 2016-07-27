@@ -77,6 +77,22 @@ const demoWebpackConfig = assign({}, sharedWebpackConfig, {
 
 const devCompiler = webpack([libWebpackConfig, demoWebpackConfig]);
 
+gulp.task('build', done =>{
+  devCompiler.run((err,stats)=>{
+    if (err) {
+      notifier.notify({ title: 'Webpack Error', message: err });
+      throw new gutil.PluginError('webpack', err);
+    }
+
+    gutil.log(gutil.colors.cyan('[webpack]'), stats.toString({
+      chunks: false,
+      version: false,
+      colors: true
+    }));
+    done()
+  })
+})
+
 gulp.task('webpack', done => {
   let firstTime = true;
 
